@@ -1,0 +1,16 @@
+name: validate
+on: push
+
+jobs: 
+  lint_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint Code to check syntax
+        run: echo "linting"
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test the code
+        run: echo "test"
+
+
