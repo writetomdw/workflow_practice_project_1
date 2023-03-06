@@ -8,6 +8,7 @@ jobs:
       - name: Lint Code to check syntax
         run: echo "linting"
   test_job:
+    needs: lint_job
     runs-on: ubuntu-latest
     steps:
       - name: Test the code
