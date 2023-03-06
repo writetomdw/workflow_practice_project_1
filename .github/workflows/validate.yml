@@ -5,8 +5,12 @@ jobs:
   lint_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Lint Code to check syntax
-        run: echo "linting"
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run lint
   test_job:
     needs: lint_job
     runs-on: ubuntu-latest
